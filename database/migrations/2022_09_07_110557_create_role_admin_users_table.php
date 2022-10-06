@@ -15,10 +15,10 @@ class CreateRoleAdminUsersTable extends Migration
     {
         Schema::create('role_admin_users', function (Blueprint $table) {
             $table->id();
-            $table->integer('admin_users_id');
-            $table->foreign('admin_users_id')->references('id')->on('admin_users');
-            $table->integer('roles_id');
-            $table->foreign('roles_id')->references('id')->on('roles');
+            $table->integer('admin_user_id');
+            $table->foreign('admin_user_id')->references('id')->on('admin_users');
+            $table->integer('role_id');
+            $table->foreign('role_id')->references('id')->on('roles');
             $table->timestamps();
         });
     }
