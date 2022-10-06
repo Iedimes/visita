@@ -19,7 +19,7 @@
 
 
                     <div class="card-header">
-                        {{-- <i class="fa fa-pencil"></i> {{ trans('admin.role-admin-user.actions.edit', ['name' => $roleAdminUser->id]) }}--}} <h4>{{ $user->full_name }}</h4>
+                        {{-- <i class="fa fa-pencil"></i> {{ trans('admin.role-admin-user.actions.edit', ['name' => $roleAdminUser->id]) }}--}} <h4>{{ $user->full_name }} <br> {{ $roleA->name }}</h4>
                     </div>
 
                     <div class="card-body">

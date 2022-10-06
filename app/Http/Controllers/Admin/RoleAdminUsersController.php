@@ -126,13 +126,22 @@ class RoleAdminUsersController extends Controller
 
 
         $user=AdminUser::where('id', '=', $id)
-                            ->latest('id')
-                            ->first();
-        $role=Role::all();
+                         ->first();
+
+        $cod = $roleAdminUser->role_id;
+        $roleA=Role::where('id', '=', $cod)
+                    ->select('name')
+                    ->first();
+
+        // $role=Role::all();
+        $role=Role::where('id', '<>', $cod)
+                    ->get();
+
 
         return view('admin.role-admin-user.edit', [
             'roleAdminUser' => $roleAdminUser,
             'role' => $role,
+            'roleA' => $roleA,
             'user' => $user,
 
         ]);
