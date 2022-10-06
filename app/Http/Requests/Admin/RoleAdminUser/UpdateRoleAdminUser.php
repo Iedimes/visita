@@ -26,8 +26,8 @@ class UpdateRoleAdminUser extends FormRequest
     public function rules(): array
     {
         return [
-            'admin_users' => ['sometimes'],
-            'roles' => ['sometimes'],
+            'admin_user' => ['sometimes'],
+            'role' => ['sometimes'],
 
         ];
     }
@@ -48,7 +48,7 @@ class UpdateRoleAdminUser extends FormRequest
     }
     public function getRoleId()
     {
-        return $this->get('roles')['id'];
+        return $this->get('role')['id'];
     }
 
     // public function getUserId()

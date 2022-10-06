@@ -26,8 +26,8 @@ class StoreRoleAdminUser extends FormRequest
     public function rules(): array
     {
         return [
-            'admin_users' => ['required'],
-            'roles' => ['required'],
+            'admin_user' => ['required'],
+            'role' => ['required'],
 
         ];
     }
@@ -48,11 +48,11 @@ class StoreRoleAdminUser extends FormRequest
 
     public function getRoleId()
     {
-        return $this->get('roles')['id'];
+        return $this->get('role')['id'];
     }
 
     public function getUserId()
     {
-        return $this->get('admin_users')['id'];
+        return $this->get('admin_user')['id'];
     }
 }

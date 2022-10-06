@@ -3,7 +3,7 @@
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         {{-- <input type="text" v-model="form.admin_users_id" v-validate="'required|integer'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('admin_users_id'), 'form-control-success': fields.admin_users_id && fields.admin_users_id.valid}" id="admin_users_id" name="admin_users_id" placeholder="{{ trans('admin.role-admin-user.columns.admin_users_id') }}"> --}}
         <multiselect
-        v-model="form.admin_users"
+        v-model="form.admin_user"
         :options="user"
         :multiple="false"
         track-by="id"
@@ -21,7 +21,7 @@
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         {{-- <input type="text" v-model="form.roles_id" v-validate="'required|integer'" @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('roles_id'), 'form-control-success': fields.roles_id && fields.roles_id.valid}" id="roles_id" name="roles_id" placeholder="{{ trans('admin.role-admin-user.columns.roles_id') }}"> --}}
         <multiselect
-        v-model="form.roles"
+        v-model="form.role"
         :options="role"
         :multiple="false"
         track-by="id"

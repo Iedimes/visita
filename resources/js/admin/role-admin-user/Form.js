@@ -6,8 +6,8 @@ Vue.component('role-admin-user-form', {
     data: function() {
         return {
             form: {
-                admin_users:  '' ,
-                roles:  '' ,
+                admin_user:  '' ,
+                role:  '' ,
 
             }
         }
