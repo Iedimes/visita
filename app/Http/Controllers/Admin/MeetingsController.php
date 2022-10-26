@@ -11,7 +11,6 @@ use App\Models\Meeting;
 use App\Models\State;
 use GuzzleHttp\Client;
 use Carbon\Carbon;
-
 use Brackets\AdminListing\Facades\AdminListing;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -19,9 +18,11 @@ use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use PDF;
 use App\Models\RoleAdminUser;
 
 class MeetingsController extends Controller
@@ -74,6 +75,55 @@ class MeetingsController extends Controller
         return view('admin.meeting.index', ['data' => $data]);
     }
 
+
+    public function inicio(Meeting $meeting, IndexMeeting $request)
+    {
+        // return 'Hola';
+        return view('admin.meeting.inicio');
+    }
+
+    public function pdf(Request $request)
+    {
+        // return $request;
+
+        // $validated = $request->validate([
+        //     'inicio' => 'required',
+        //     'fin' => 'required',
+        // ]);
+        $rules = [
+            'inicio' => 'required',
+            'fin' => 'required',
+        ];
+
+        $messages = [
+            'inicio.required' => 'Debe cargar la fecha de inicio.',
+            'fin.required' => 'Debe cargar la fecha de fin.',
+        ];
+
+        $this->validate($request, $rules, $messages);
+
+
+
+        $inicio=$request->inicio;
+        $fin=$request->fin;
+        //return $inicio.$fin;
+
+        //return $meetings = Meeting::all();
+        $meetings = Meeting::whereBetween('Meeting_Date', ["$inicio", "$fin"])
+                                    ->where('state_id', '=', 3)
+                                    ->get();
+        $contar = count($meetings);
+        $pdf = PDF::loadView('admin.meeting.reporte', compact('meetings' , 'contar'))->setPaper('a4', 'landscape');
+        return $pdf->download('ReporteAudiencias.pdf');
+    }
+
+
+
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -108,6 +158,7 @@ class MeetingsController extends Controller
         // Store the Meeting
         $sanitized ['state_id']=3;
 
+
        // $meeting = Meeting::create($sanitized);
 
         $audiencia = Meeting::create($sanitized);
@@ -128,6 +179,7 @@ class MeetingsController extends Controller
 
         // Store the Meeting
         $sanitized ['state_id']=3;
+        $sanitized ['With_whom']='MINISTRO';
 
        // $meeting = Meeting::create($sanitized);
 

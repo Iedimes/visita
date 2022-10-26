@@ -15,8 +15,11 @@
        <center><img src="{{storage_path('images/MUVHG.jpg')}}" class="imagencentro" width="950" height="140"></center>
 
     </head>
+    <div class="card-header">
+        <center><h2>REPORTE DE VISITAS</h2></center>
+    </div>
 <body>
-<br>
+
 <table style="font-size: 13px;" CELLPADDING=5 CELLSPACING=0 width="750">
 
 

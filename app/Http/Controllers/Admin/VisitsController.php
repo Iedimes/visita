@@ -194,7 +194,7 @@ class VisitsController extends Controller
     public function message()
 {
     return [
-        'inicio.required' => 'Tu hermana',
+        // 'inicio.required' => 'Tu hermana',
         // 'body.required' => 'A message is required',
     ];
 }

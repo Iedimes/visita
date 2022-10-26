@@ -378,5 +378,22 @@ return [
         ],
     ],
 
+    'reportea' => [
+        'title' => 'Reportea',
+
+        'actions' => [
+            'index' => 'Reportea',
+            'create' => 'New Reportea',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'inicio' => 'Inicio',
+            'fin' => 'Fin',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
 ];

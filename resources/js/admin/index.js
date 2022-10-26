@@ -8,3 +8,4 @@ import './meeting';
 import './reportev';
 import './role-admin-user';
 import './role';
+import './reportea';

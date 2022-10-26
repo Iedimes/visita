@@ -145,10 +145,12 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
             Route::post('/{meeting}',                                   'MeetingsController@update')->name('update');
             Route::delete('/{meeting}',                                 'MeetingsController@destroy')->name('destroy');
             Route::get('/{id}/identificaciones',                        'MeetingsController@getIdentificaciones')->name('identificaciones');
-            Route::get('/{meeting}/entrada',                               'MeetingsController@entrada')->name('entrada');
-            Route::get('/{meeting}/salida',                               'MeetingsController@salida')->name('salida');
-            Route::get('/{meeting}/reprogramar',                               'MeetingsController@reprogramar')->name('reprogramar');
-            Route::get('/{meeting}/cancelar',                               'MeetingsController@cancelar')->name('cancelar');
+            Route::get('/{meeting}/entrada',                            'MeetingsController@entrada')->name('entrada');
+            Route::get('/{meeting}/salida',                             'MeetingsController@salida')->name('salida');
+            Route::get('/{meeting}/reprogramar',                        'MeetingsController@reprogramar')->name('reprogramar');
+            Route::get('/{meeting}/cancelar',                           'MeetingsController@cancelar')->name('cancelar');
+            Route::get('/inicio',                                       'MeetingsController@inicio')->name('inicio');
+            Route::get('/generar',                                      'MeetingsController@pdf')->name('generar');
 
 
 
@@ -186,3 +188,5 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         });
     });
 });
+
+

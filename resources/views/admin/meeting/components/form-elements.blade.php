@@ -38,13 +38,13 @@
     </div>
 </div>
 
-<div class="form-group row align-items-center" :class="{'has-danger': errors.has('With_whom'), 'has-success': fields.With_whom && fields.With_whom.valid }">
+{{-- <div class="form-group row align-items-center" :class="{'has-danger': errors.has('With_whom'), 'has-success': fields.With_whom && fields.With_whom.valid }">
     <label for="With_whom" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.meeting.columns.With_whom') }}</label>
         <div :class="isFormLocalized ? 'col-md-4' : 'col-md-9 col-xl-8'">
         <input type="text" v-model="form.With_whom"  @input="validate($event)" class="form-control" :class="{'form-control-danger': errors.has('With_whom'), 'form-control-success': fields.With_whom && fields.With_whom.valid}" id="With_whom" name="With_whom" placeholder="{{ trans('admin.meeting.columns.With_whom') }}">
         <div v-if="errors.has('With_whom')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('With_whom') }}</div>
     </div>
-</div>
+</div> --}}
 
 <div class="form-group row align-items-center" :class="{'has-danger': errors.has('Meeting_Date'), 'has-success': fields.Meeting_Date && fields.Meeting_Date.valid }">
     <label for="Meeting_Date" class="col-form-label text-md-right" :class="isFormLocalized ? 'col-md-4' : 'col-md-2'">{{ trans('admin.meeting.columns.Meeting_Date') }}</label>

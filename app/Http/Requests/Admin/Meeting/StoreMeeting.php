@@ -31,7 +31,7 @@ class StoreMeeting extends FormRequest
             'First_Names' => ['required', 'string'],
             'Reason' => ['nullable', 'string'],
             'Observation' => ['nullable'],
-            'With_whom' => ['required', 'string'],
+            'With_whom' => ['nullable'],
             'Meeting_Date' => ['required', 'date'],
             'Entry_Datetime' => ['nullable'],
             'Exit_Datetime' => ['nullable'],
