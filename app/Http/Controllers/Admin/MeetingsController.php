@@ -157,6 +157,8 @@ class MeetingsController extends Controller
 
         // Store the Meeting
         $sanitized ['state_id']=3;
+        $sanitized ['With_whom']='MINISTRO';
+
 
 
        // $meeting = Meeting::create($sanitized);
